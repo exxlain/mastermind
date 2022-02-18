@@ -1,10 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import gameStatusReducer from '../features/StartPage/startPageSlice';
+import startPageReducer from '../features/StartPage/startPageSlice';
+import gamePageReducer from '../features/GamePage/gamePageSlice';
 import counterReducer from '../features/counter/counterSlice';
 
 export const store = configureStore({
   reducer: {
-    gameStatus: gameStatusReducer,
+    startPage: startPageReducer,
+    gamePage: gamePageReducer,
     counter: counterReducer,
   },
 });
