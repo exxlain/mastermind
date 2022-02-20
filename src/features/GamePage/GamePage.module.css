@@ -1,6 +1,14 @@
-.pickup {
-  width: 80%;
+.page {
+  width: 60%;
   margin: 0 auto;
+}
+.button {
+  width: 15%;
+  height: 30px;
+}
+.results {
+  border: 1px solid black;
+  min-height: 600px;
 }
 
 

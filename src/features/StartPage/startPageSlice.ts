@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '../../app/store';
 
 
 interface StartPageState {
@@ -23,5 +24,7 @@ export const startPageSlice = createSlice({
   },
 });
 export const { startGame } = startPageSlice.actions;
+
+export const  puzzleSequence = (state: RootState) => state.startPage.puzzleSequence;
 
 export default startPageSlice.reducer;

@@ -3,13 +3,14 @@ import {
   Link,
 } from 'react-router-dom';
 import { useAppDispatch } from '../../app/hooks';
+import type { AppDispatch } from '../../app/store';
 import { startGame } from './startPageSlice';
-import styles from './StartPage.module.css';
 import logo from '../../logo.svg';
 import generatePuzzle from '../../app/helpers/generatePuzzle';
+import styles from './StartPage.module.css';
 
 export function StartPage() {
-  const dispatch = useAppDispatch();
+  const dispatch: AppDispatch = useAppDispatch();
   const onStartButtonClick = ()=>{
     const puzzleSequence = generatePuzzle();
     dispatch(startGame(puzzleSequence));

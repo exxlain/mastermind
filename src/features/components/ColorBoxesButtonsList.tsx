@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ColorBoxesList.module.css';
-import ColorBoxButton from './ColorBoxes/ColorBoxButton';
+import ColorBoxButton from './Boxes/ColorBoxButton';
 import { AnyAction } from '@reduxjs/toolkit';
 
 interface IColorBoxesButtonsListProps {
@@ -9,7 +9,7 @@ interface IColorBoxesButtonsListProps {
 }
 const ColorBoxesButtonsList : React.FC<IColorBoxesButtonsListProps> = ({ colors, selectColor }) =>{
   return (
-      <div className={styles.list}>
+      <div className={styles.colorsList}>
           {colors.map(currentColor =>
             (ColorBoxButton(
               { color: `${currentColor}`,  selectColor: selectColor },
