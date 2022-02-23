@@ -2,7 +2,23 @@
   width: 60%;
   margin: 0 auto;
 }
-.button {
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.headerButton {
+  height: 40px;
+  border-radius: 15%;
+  margin: 5px 0;
+  background-color: #4B4137;
+  font-family: 'CastlemarRegular', serif;
+  font-size: 25px;
+  color: black;
+}
+.headerButton:hover {
+  background-color: #4B5137;
+}
+.checkButton {
   width: 20%;
   height: 40px;
   border-radius: 15%;
@@ -14,18 +30,12 @@
   font-size: 30px;
   color: #4B4137;
 }
-.buttonsWrapper {
-  display: flex;
-  justify-content: space-between;
+.checkButton:hover:not([disabled]) {
+  background-color: white;
 }
-.backButton {
-  height: 40px;
-  border-radius: 15%;
-  margin: 5px 0;
-  background-color: #4B4137;
-  font-family: 'CastlemarRegular', serif;
-  font-size: 25px;
-  color: black;
+.checkButton:disabled {
+  color: darkgray;
+  border: 1px solid darkgray;
 }
 .results {
   border: 2px solid #4B4137;
@@ -36,5 +46,3 @@
   margin: 10px;
   padding: 0;
 }
-
-

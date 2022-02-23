@@ -1,7 +1,6 @@
 import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit';
 import startPageReducer from '../features/StartPage/startPageSlice';
 import gamePageReducer from '../features/GamePage/gamePageSlice';
-import counterReducer from '../features/counter/counterSlice';
 import {
   persistStore,
   persistReducer,
@@ -23,7 +22,6 @@ const persistConfig = {
 const rootReducer =  combineReducers({
   startPage: startPageReducer,
   gamePage: gamePageReducer,
-  counter: counterReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -39,7 +37,6 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

@@ -7,16 +7,16 @@ interface IColorBoxesSelectedListProps {
   colors: Array<string>;
   clearSelectedPlace: (color: number) => AnyAction;
 }
+
 const ColorBoxesSelectedList : React.FC<IColorBoxesSelectedListProps> = ({ colors, clearSelectedPlace }) =>{
   return (
-      <div className={styles.colorsList}>
-          {colors.map((currentColor, index) =>
-            (ColorBoxSelected(
-              { color: `${currentColor}`,  clearSelectedPlace: clearSelectedPlace, index:  index },
-            )))}
-      </div>
+    <div className={styles.colorsList}>
+      {colors.map((currentColor, index) =>
+        (ColorBoxSelected(
+          { color: `${currentColor}`,  clearSelectedPlace: clearSelectedPlace, index:  index },
+        )))}
+    </div>
   );
-
 };
 
 export default ColorBoxesSelectedList;

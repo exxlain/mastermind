@@ -1,64 +1,54 @@
 .startPage {
-    text-align: center;
-    font-style: normal;
+  text-align: center;
+  font-style: normal;
 }
-
 .startPageLogo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
-
 @media (prefers-reduced-motion: no-preference) {
-    .startPageLogo {
-        animation: App-logo-float infinite 3s ease-in-out;
-    }
+  .startPageLogo {
+      animation: App-logo-float infinite 3s ease-in-out;
+  }
 }
-
 .startPageHeader {
-    min-height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
 }
-
-
 @keyframes App-logo-float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(10px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
 }
-
 .button {
-    font-family: CastlemarRegular, serif;
-    appearance: none;
-    background: none;
-    font-size: 132px;
-    padding-left: 12px;
-    padding-right: 12px;
-    outline: none;
-    border: 5px solid #4B4137;
-    border-radius: 50%;
-    color: #4B4137;
-    padding-bottom: 4px;
-    cursor: pointer;
-    background-color: #A67C00;
-    transition: all 0.15s;
+  font-family: CastlemarRegular, serif;
+  appearance: none;
+  font-size: 132px;
+  padding-left: 12px;
+  padding-right: 12px;
+  outline: none;
+  border: 5px solid #4B4137;
+  border-radius: 50%;
+  color: #4B4137;
+  padding-bottom: 4px;
+  cursor: pointer;
+  background: #A67C00 none;
+  transition: all 0.15s;
 }
-
-
 .button:hover,
 .button:focus {
-    border: 2px solid #A67C00;
+  border: 2px solid #A67C00;
 }
-
 .button:active {
-    background-color: #A67C00;
+  background-color: #A67C00;
 }

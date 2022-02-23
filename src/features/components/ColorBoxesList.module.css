@@ -1,12 +1,12 @@
 .resultItem {
- border-bottom: 1px solid #A67C00;
+  border-bottom: 1px solid #A67C00;
 }
 .colorsList {
- display: flex;
- justify-content: space-between;
- margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
 }
 .resultsList {
- display: flex;
- margin: 0 0 10px 0;
+  display: flex;
+  margin: 0 0 10px 0;
 }

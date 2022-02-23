@@ -39,6 +39,7 @@ const gamePageSlice = createSlice({
     },
   },
 });
+
 export const currentSequence = (state: RootState) => state.gamePage.currentSequence;
 export const sequences = (state: RootState) => state.gamePage.sequences;
 export const results = (state: RootState) => state.gamePage.results;

@@ -43,28 +43,29 @@ export function GamePage() {
     dispatch(resetPuzzle());
     navigate(START_PAGE);
   };
+
   return (
     <div className={styles.page}>
-    <div className={styles.buttonsWrapper}>
-      <button
-        className={styles.backButton}
-        aria-label="Go to start page"
-        onClick={onBackButtonClick}
-      >
-        Go back
-      </button>
+      <header className={styles.header}>
         <button
-            className={styles.backButton}
-            aria-label="Try again"
-            onClick={onRestartButtonClick}
+          className={styles.headerButton}
+          aria-label="Go to start page"
+          onClick={onBackButtonClick}
         >
-            Restart
+          Go back
         </button>
-      </div>
+        <button
+          className={styles.headerButton}
+          aria-label="Try again"
+          onClick={onRestartButtonClick}
+        >
+          Restart
+        </button>
+      </header>
       {<ColorBoxesButtonsList colors={puzzleItemsVariants} selectColor={pushColorToCurrentPuzzle}/>}
       {<ColorBoxesSelectedList colors={currentSequenceSelection} clearSelectedPlace={clearSelectedPlace}/>}
       <button
-        className={styles.button}
+        className={styles.checkButton}
         aria-label="Check your sequence"
         onClick={onCheckButtonClick}
         disabled={findEmptyElementIndex(currentSequenceSelection) !== -1}
@@ -74,7 +75,7 @@ export function GamePage() {
       <section className={styles.results}>
         <p className={styles.resultsText}>Your results:</p>
         {currentSequences.map((sequence, index)=>(<ColorBoxesList colors={sequence} results={currentResults[index]} key={nanoid()}/>))}
-    </section>
-</div>
+      </section>
+    </div>
   );
 }

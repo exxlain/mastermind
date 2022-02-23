@@ -18,19 +18,19 @@ export function StartPage() {
   };
 
   return (
-      <div className={styles.startPage}>
+    <div className={styles.startPage}>
       <header className={styles.startPageHeader}>
-          <img src={logo} className={styles.startPageLogo} alt="logo" />
+        <img src={logo} className={styles.startPageLogo} alt="logo" />
       </header>
-        <section>
-            <Link to={GAME_PAGE}>
-            <button
-                className={styles.button}
-                aria-label="Start game"
-                onClick={onStartButtonClick}
-            >start</button>
-            </Link>
-        </section>
-      </div>
+      <section>
+        <Link to={GAME_PAGE}>
+          <button
+              className={styles.button}
+              aria-label="Start game"
+              onClick={onStartButtonClick}
+          >start</button>
+        </Link>
+      </section>
+    </div>
   );
 }
