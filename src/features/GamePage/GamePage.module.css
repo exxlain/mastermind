@@ -3,12 +3,24 @@
   margin: 0 auto;
 }
 .button {
-  width: 15%;
-  height: 30px;
+  width: 20%;
+  height: 40px;
+  border-radius: 15%;
+  border: 3px solid #4B4137;
+  margin: 10px auto;
+  background-color: #96857B;
+  font-family: 'CastlemarRegular';
+  font-size: 30px;
+  color: #4B4137;
 }
 .results {
-  border: 1px solid black;
+  border: 2px solid #4B4137;
   min-height: 600px;
+}
+.resultsText {
+  font-size: 30px;
+  margin: 10px;
+  padding: 0;
 }
 
 

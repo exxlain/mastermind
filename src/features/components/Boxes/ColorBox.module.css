@@ -1,5 +1,12 @@
 .box {
  width: 90px;
  height: 90px;
- border: 1px solid black;
+ border: 3px solid #A67C00;
+ font-size: 70px;
+ color: #A67C00;
+ font-family: 'CastlemarRegular';
+}
+.text {
+ text-align: center;
+ margin: 5%;
 }

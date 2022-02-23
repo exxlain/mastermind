@@ -42,7 +42,7 @@ export function GamePage() {
         Check
       </button>
       <section className={styles.results}>
-        <p>Your results:</p>
+        <p className={styles.resultsText}>Your results:</p>
         {currentSequences.map((sequence, index)=>(<ColorBoxesList colors={sequence} results={currentResults[index]} key={nanoid()}/>))}
     </section>
 </div>

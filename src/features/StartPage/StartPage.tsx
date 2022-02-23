@@ -27,7 +27,7 @@ export function StartPage() {
                 className={styles.button}
                 aria-label="Start game"
                 onClick={onStartButtonClick}
-            >START</button>
+            >start</button>
             </Link>
         </section>
       </div>

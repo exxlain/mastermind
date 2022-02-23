@@ -2,6 +2,7 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 
 import styles from './ColorBox.module.css';
+import { colorSymbolMap } from '../../../app/constants';
 
 
 interface IColorBoxProps {
@@ -13,7 +14,9 @@ const ColorBox : React.FC<IColorBoxProps> = ({ color }) =>{
           className={styles.box}
           style={{ backgroundColor: `${color}` }}
           key={nanoid()}
-        />
+        >
+            <div className={styles.text}>{colorSymbolMap[color as keyof typeof colorSymbolMap]}</div>
+        </div>
   );
 };
 

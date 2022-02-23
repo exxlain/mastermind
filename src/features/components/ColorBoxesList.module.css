@@ -1,5 +1,5 @@
 .resultItem {
- border-bottom: 1px solid grey;
+ border-bottom: 1px solid #A67C00;
 }
 .colorsList {
  display: flex;
@@ -8,4 +8,5 @@
 }
 .resultsList {
  display: flex;
+ margin: 0 0 10px 0;
 }

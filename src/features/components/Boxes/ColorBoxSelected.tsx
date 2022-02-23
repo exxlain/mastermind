@@ -3,6 +3,7 @@ import { AnyAction } from '@reduxjs/toolkit';
 import styles from './ColorBox.module.css';
 import { nanoid } from 'nanoid';
 import { useAppDispatch } from '../../../app/hooks';
+import { colorSymbolMap } from '../../../app/constants';
 
 
 interface IColorBoxSelectedProps {
@@ -17,9 +18,9 @@ const ColorBoxSelected : React.FC<IColorBoxSelectedProps> = ({ color, clearSelec
         <button
           className={styles.box}
           onClick={() => (dispatch(clearSelectedPlace(index)))}
-          style={{ backgroundColor: `${color}` }}
+          style={{ backgroundColor: `${color === 'none' ? 'transparent' : color}` }}
           key={nanoid()}
-        />
+        >{colorSymbolMap[color as keyof typeof colorSymbolMap]}</button>
   );
 };
 
