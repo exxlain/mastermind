@@ -5,13 +5,13 @@ import checkResult from '../../app/helpers/checkResult';
 import findEmptyElementIndex from '../../app/helpers/findEmptyElementIndex';
 
 
-interface GamePage {
+export interface GamePageState {
   currentSequence: Array<string>;
   sequences: Array<Array<string>>;
   results: Array<Array<number>>;
 }
 
-const initialState: GamePage = {
+const initialState: GamePageState = {
   currentSequence: puzzleItemsCleared,
   sequences: [],
   results: [],

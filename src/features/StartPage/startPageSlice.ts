@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
 
-interface StartPageState {
+export interface StartPageState {
   isGameStarted: boolean;
   puzzleSequence: Array<string>;
 }

@@ -1,8 +1,7 @@
 import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit';
-import startPageReducer from '../features/StartPage/startPageSlice';
-import gamePageReducer from '../features/GamePage/gamePageSlice';
+import startPageReducer, { StartPageState } from '../features/StartPage/startPageSlice';
+import gamePageReducer, { GamePageState } from '../features/GamePage/gamePageSlice';
 import {
-  persistStore,
   persistReducer,
   FLUSH,
   REHYDRATE,
@@ -19,7 +18,13 @@ const persistConfig = {
   storage,
 };
 
-const rootReducer =  combineReducers({
+
+export interface IAppState {
+  startPage: StartPageState,
+  gamePage: GamePageState,
+}
+
+const rootReducer =  combineReducers<IAppState>({
   startPage: startPageReducer,
   gamePage: gamePageReducer,
 });
@@ -35,8 +40,6 @@ export const store = configureStore({
       },
     }),
 });
-
-export const persistor = persistStore(store);
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
