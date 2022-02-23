@@ -7,11 +7,25 @@
   height: 40px;
   border-radius: 15%;
   border: 3px solid #4B4137;
-  margin: 10px auto;
+  margin-top: 5px;
+  margin-bottom: 3px;
   background-color: #96857B;
-  font-family: 'CastlemarRegular';
+  font-family: 'CastlemarRegular', serif;
   font-size: 30px;
   color: #4B4137;
+}
+.buttonsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.backButton {
+  height: 40px;
+  border-radius: 15%;
+  margin: 5px 0;
+  background-color: #4B4137;
+  font-family: 'CastlemarRegular', serif;
+  font-size: 25px;
+  color: black;
 }
 .results {
   border: 2px solid #4B4137;

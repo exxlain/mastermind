@@ -20,10 +20,12 @@ export const startPageSlice = createSlice({
       state.isGameStarted = true;
       state.puzzleSequence = action.payload;
     },
-
+    resetPuzzle: ()=>{
+      return initialState;
+    },
   },
 });
-export const { startGame } = startPageSlice.actions;
+export const { startGame, resetPuzzle } = startPageSlice.actions;
 
 export const  puzzleSequence = (state: RootState) => state.startPage.puzzleSequence;
 

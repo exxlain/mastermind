@@ -8,6 +8,7 @@ import { startGame } from './startPageSlice';
 import logo from '../../logo.svg';
 import generatePuzzle from '../../app/helpers/generatePuzzle';
 import styles from './StartPage.module.css';
+import { GAME_PAGE } from '../../app/constants/paths';
 
 export function StartPage() {
   const dispatch: AppDispatch = useAppDispatch();
@@ -22,7 +23,7 @@ export function StartPage() {
           <img src={logo} className={styles.startPageLogo} alt="logo" />
       </header>
         <section>
-            <Link to="/game-page">
+            <Link to={GAME_PAGE}>
             <button
                 className={styles.button}
                 aria-label="Start game"

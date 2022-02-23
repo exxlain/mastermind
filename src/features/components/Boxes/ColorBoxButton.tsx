@@ -3,7 +3,7 @@ import { AnyAction } from '@reduxjs/toolkit';
 import styles from './ColorBox.module.css';
 import { nanoid } from 'nanoid';
 import { useAppDispatch } from '../../../app/hooks';
-import { colorSymbolMap } from '../../../app/constants';
+import { colorSymbolMap } from '../../../app/constants/constants';
 
 
 interface IColorBoxButtonProps {

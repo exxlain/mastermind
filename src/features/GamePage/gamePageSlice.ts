@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { puzzleItemsCleared, emptyElement } from '../../app/constants';
+import { puzzleItemsCleared, emptyElement } from '../../app/constants/constants';
 import type { RootState } from '../../app/store';
 import checkResult from '../../app/helpers/checkResult';
 import findEmptyElementIndex from '../../app/helpers/findEmptyElementIndex';
@@ -34,6 +34,9 @@ const gamePageSlice = createSlice({
       state.results.push(result);
       state.currentSequence = puzzleItemsCleared;
     },
+    resetResults: ()=>{
+      return initialState;
+    },
   },
 });
 export const currentSequence = (state: RootState) => state.gamePage.currentSequence;
@@ -44,5 +47,6 @@ export const {
   pushColorToCurrentPuzzle,
   clearSelectedPlace,
   saveResult,
+  resetResults,
 } = gamePageSlice.actions;
 export default gamePageSlice.reducer;

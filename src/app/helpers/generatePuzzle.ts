@@ -1,4 +1,4 @@
-import { puzzleItemsVariants, puzzleLength } from '../constants';
+import { puzzleItemsVariants, puzzleLength } from '../constants/constants';
 
 const getRandomInt = ()=> Math.floor(Math.random() * puzzleLength);
 

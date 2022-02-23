@@ -2,7 +2,7 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 
 import styles from './ColorBox.module.css';
-import { colorSymbolMap } from '../../../app/constants';
+import { colorSymbolMap } from '../../../app/constants/constants';
 
 
 interface IColorBoxProps {
