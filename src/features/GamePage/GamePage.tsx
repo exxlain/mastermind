@@ -7,10 +7,12 @@ import {
   pushColorToCurrentPuzzle,
   saveResult,
   clearSelectedPlace,
+  getVictory,
   currentSequence,
   sequences,
   results,
   resetResults,
+  victory,
 } from './gamePageSlice';
 import {
   puzzleSequence,
@@ -24,16 +26,22 @@ import ColorBoxesSelectedList from '../components/ColorBoxesSelectedList';
 import ColorBoxesList from './../components/ColorBoxesList';
 import ColorBoxesButtonsList from './../components/ColorBoxesButtonsList';
 import styles from './GamePage.module.css';
+import Fireworks from './../components/Fireworks/Fireworks';
 
 export function GamePage() {
   const dispatch: AppDispatch = useAppDispatch();
   const navigate =  useNavigate();
+  const puzzleFromGame = useAppSelector(puzzleSequence);
   const currentSequenceSelection = useAppSelector(currentSequence);
   const currentSequences = useAppSelector(sequences);
   const currentResults = useAppSelector(results);
-  const puzzle = useAppSelector(puzzleSequence);
+  const victoryState = useAppSelector(victory);
+
   const onCheckButtonClick = ()=>{
-    dispatch(saveResult(puzzle));
+    if (currentSequenceSelection.join === puzzleFromGame.join){
+      dispatch(getVictory());
+    }
+    dispatch(saveResult(puzzleFromGame));
   };
   const onRestartButtonClick = ()=>{
     dispatch(resetResults());
@@ -45,37 +53,40 @@ export function GamePage() {
   };
 
   return (
-    <div className={styles.page}>
-      <header className={styles.header}>
+    <>
+      {victoryState && <Fireworks/>}
+      <div className={styles.page}>
+        <header className={styles.header}>
+          <button
+            className={styles.headerButton}
+            aria-label="Go to start page"
+            onClick={onBackButtonClick}
+          >
+            Go to start page
+          </button>
+          <button
+            className={styles.headerButton}
+            aria-label="Try again"
+            onClick={onRestartButtonClick}
+          >
+            Restart
+          </button>
+        </header>
+        {<ColorBoxesButtonsList colors={puzzleItemsVariants} selectColor={pushColorToCurrentPuzzle}/>}
+        {<ColorBoxesSelectedList colors={currentSequenceSelection} clearSelectedPlace={clearSelectedPlace}/>}
         <button
-          className={styles.headerButton}
-          aria-label="Go to start page"
-          onClick={onBackButtonClick}
+          className={styles.checkButton}
+          aria-label="Check your sequence"
+          onClick={onCheckButtonClick}
+          disabled={findEmptyElementIndex(currentSequenceSelection) !== -1}
         >
-          Go back
+          Check
         </button>
-        <button
-          className={styles.headerButton}
-          aria-label="Try again"
-          onClick={onRestartButtonClick}
-        >
-          Restart
-        </button>
-      </header>
-      {<ColorBoxesButtonsList colors={puzzleItemsVariants} selectColor={pushColorToCurrentPuzzle}/>}
-      {<ColorBoxesSelectedList colors={currentSequenceSelection} clearSelectedPlace={clearSelectedPlace}/>}
-      <button
-        className={styles.checkButton}
-        aria-label="Check your sequence"
-        onClick={onCheckButtonClick}
-        disabled={findEmptyElementIndex(currentSequenceSelection) !== -1}
-      >
-        Check
-      </button>
-      <section className={styles.results}>
-        <p className={styles.resultsText}>Your results:</p>
-        {currentSequences.map((sequence, index)=>(<ColorBoxesList colors={sequence} results={currentResults[index]} key={nanoid()}/>))}
-      </section>
-    </div>
+        <section className={styles.results}>
+          <p className={styles.resultsText}>Your results:</p>
+          {currentSequences.map((sequence, index)=>(<ColorBoxesList colors={sequence} results={currentResults[index]} key={nanoid()}/>))}
+        </section>
+      </div>
+     </>
   );
 }

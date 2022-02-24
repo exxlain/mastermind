@@ -9,12 +9,14 @@ export interface GamePageState {
   currentSequence: Array<string>;
   sequences: Array<Array<string>>;
   results: Array<Array<number>>;
+  victory: boolean;
 }
 
 const initialState: GamePageState = {
   currentSequence: puzzleItemsCleared,
   sequences: [],
   results: [],
+  victory: false,
 };
 
 const gamePageSlice = createSlice({
@@ -37,17 +39,22 @@ const gamePageSlice = createSlice({
     resetResults: ()=>{
       return initialState;
     },
+    getVictory(state){
+      state.victory = true;
+    },
   },
 });
 
 export const currentSequence = (state: RootState) => state.gamePage.currentSequence;
 export const sequences = (state: RootState) => state.gamePage.sequences;
 export const results = (state: RootState) => state.gamePage.results;
+export const victory = (state: RootState) => state.gamePage.victory;
 
 export const {
   pushColorToCurrentPuzzle,
   clearSelectedPlace,
   saveResult,
   resetResults,
+  getVictory,
 } = gamePageSlice.actions;
 export default gamePageSlice.reducer;
