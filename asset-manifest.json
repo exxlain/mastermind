@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "//exxlain.github.io/static/css/main.fd3dd530.css",
-    "main.js": "//exxlain.github.io/static/js/main.3e050cc2.js",
-    "static/media/CastlemarRegular.otf": "//exxlain.github.io/static/media/CastlemarRegular.496dc28a1c837f43dc71.otf",
-    "static/media/logo.svg": "//exxlain.github.io/static/media/logo.0fec7e8b6493eb667802c8b7e972bc32.svg",
-    "index.html": "//exxlain.github.io/index.html",
-    "main.fd3dd530.css.map": "//exxlain.github.io/static/css/main.fd3dd530.css.map",
-    "main.3e050cc2.js.map": "//exxlain.github.io/static/js/main.3e050cc2.js.map"
+    "main.css": "//exxlain.github.io/mastermind/static/css/main.e0ac7c89.css",
+    "main.js": "//exxlain.github.io/mastermind/static/js/main.6d28885a.js",
+    "static/media/CastlemarRegular.otf": "//exxlain.github.io/mastermind/static/media/CastlemarRegular.496dc28a1c837f43dc71.otf",
+    "static/media/logo.svg": "//exxlain.github.io/mastermind/static/media/logo.0fec7e8b6493eb667802c8b7e972bc32.svg",
+    "index.html": "//exxlain.github.io/mastermind/index.html",
+    "main.e0ac7c89.css.map": "//exxlain.github.io/mastermind/static/css/main.e0ac7c89.css.map",
+    "main.6d28885a.js.map": "//exxlain.github.io/mastermind/static/js/main.6d28885a.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd3dd530.css",
-    "static/js/main.3e050cc2.js"
+    "static/css/main.e0ac7c89.css",
+    "static/js/main.6d28885a.js"
   ]
 }
