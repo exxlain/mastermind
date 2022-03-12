@@ -39,7 +39,7 @@ const gamePageSlice = createSlice({
     resetResults: ()=>{
       return initialState;
     },
-    getVictory(state){
+    getVictory: (state)=>{
       state.victory = true;
     },
   },
@@ -57,4 +57,5 @@ export const {
   resetResults,
   getVictory,
 } = gamePageSlice.actions;
+
 export default gamePageSlice.reducer;

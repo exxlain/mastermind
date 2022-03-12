@@ -38,7 +38,7 @@ export function GamePage() {
   const victoryState = useAppSelector(victory);
 
   const onCheckButtonClick = ()=>{
-    if (currentSequenceSelection.join === puzzleFromGame.join){
+    if (currentSequenceSelection.join() === puzzleFromGame.join()){
       dispatch(getVictory());
     }
     dispatch(saveResult(puzzleFromGame));
