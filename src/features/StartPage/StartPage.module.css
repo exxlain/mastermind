@@ -33,14 +33,12 @@
 .button {
   font-family: CastlemarRegular, serif;
   appearance: none;
-  font-size: 60px;
-  padding-left: 12px;
-  padding-right: 12px;
+  font-size: 55px;
+  padding: 0 22px 4px 22px;
   outline: none;
-  border: 3px solid #4B4137;
+  border: 1px solid #4B4137;
   border-radius: 50%;
   color: #4B4137;
-  padding-bottom: 4px;
   cursor: pointer;
   background: #A67C00 none;
   transition: all 0.15s;

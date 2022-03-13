@@ -4,7 +4,7 @@
 .colorsList {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 .resultsList {
   display: flex;
