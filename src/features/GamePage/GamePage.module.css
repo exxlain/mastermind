@@ -20,7 +20,6 @@
   background-color: #4B5137;
 }
 .checkButton {
-  width: 20%;
   height: 40px;
   border-radius: 15%;
   border: 3px solid #4B4137;
@@ -29,6 +28,7 @@
   font-family: 'CastlemarRegular', serif;
   font-size: 30px;
   color: #4B4137;
+  width: fit-content;
 }
 .checkButton:hover:not([disabled]) {
   background-color: white;
@@ -40,6 +40,7 @@
 .selectVariantsWrapper {
   border: 1px solid #A67C00;
   border-radius: 2%;
+  min-height: 60px;
 }
 .results {
   border: 1px solid #A67C00;
