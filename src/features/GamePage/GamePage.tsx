@@ -72,8 +72,10 @@ export function GamePage() {
             Restart
           </button>
         </header>
-        {<ColorBoxesButtonsList colors={puzzleItemsVariants} selectColor={pushColorToCurrentPuzzle}/>}
-        {<ColorBoxesSelectedList colors={currentSequenceSelection} clearSelectedPlace={clearSelectedPlace}/>}
+        <section className={styles.selectVariantsWrapper}>
+          {<ColorBoxesButtonsList colors={puzzleItemsVariants} selectColor={pushColorToCurrentPuzzle}/>}
+          {<ColorBoxesSelectedList colors={currentSequenceSelection} clearSelectedPlace={clearSelectedPlace}/>}
+        </section>
         <button
           className={styles.checkButton}
           aria-label="Check your sequence"
