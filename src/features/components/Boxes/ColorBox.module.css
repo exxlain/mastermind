@@ -1,10 +1,12 @@
 .box {
-  width: 20%;
+  width: 90px;
   height: 90px;
   border: 3px solid #A67C00;
   font-size: 70px;
   color: #A67C00;
  font-family: 'CastlemarRegular', serif;
+  margin: 0;
+  padding: 0;
 }
 .text {
   text-align: center;
