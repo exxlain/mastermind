@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mastermind/static/css/main.734e8ecf.css",
-    "main.js": "/mastermind/static/js/main.cfab69af.js",
+    "main.js": "/mastermind/static/js/main.3f27acb3.js",
     "static/media/CastlemarRegular.otf": "/mastermind/static/media/CastlemarRegular.496dc28a1c837f43dc71.otf",
     "static/media/logo.svg": "/mastermind/static/media/logo.c3728c2d39114b8d6d92d05b1cdf32ca.svg",
     "index.html": "/mastermind/index.html",
     "main.734e8ecf.css.map": "/mastermind/static/css/main.734e8ecf.css.map",
-    "main.cfab69af.js.map": "/mastermind/static/js/main.cfab69af.js.map"
+    "main.3f27acb3.js.map": "/mastermind/static/js/main.3f27acb3.js.map"
   },
   "entrypoints": [
     "static/css/main.734e8ecf.css",
-    "static/js/main.cfab69af.js"
+    "static/js/main.3f27acb3.js"
   ]
 }
