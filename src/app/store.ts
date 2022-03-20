@@ -24,7 +24,7 @@ export interface IAppState {
   gamePage: GamePageState,
 }
 
-const rootReducer =  combineReducers<IAppState>({
+export const rootReducer =  combineReducers<IAppState>({
   startPage: startPageReducer,
   gamePage: gamePageReducer,
 });

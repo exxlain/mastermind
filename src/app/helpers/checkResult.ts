@@ -21,8 +21,8 @@ const checkResult = (puzzleSequence: Array<string>, currentSequence: Array<strin
       resultArr.push(0);
     }
   });
-  const  sortedArr = resultArr.sort((a, b) => b - a );
-  return  sortedArr;
+
+  return  resultArr.sort((a, b) => b - a);
 };
 
 export default checkResult;

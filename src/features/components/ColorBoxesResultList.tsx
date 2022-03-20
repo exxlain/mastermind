@@ -8,7 +8,7 @@ interface IColorBoxesListProps {
   results: Array<number>;
 }
 
-const ColorBoxesList : React.FC<IColorBoxesListProps> = ({ colors, results }) =>{
+const ColorBoxesResultList : React.FC<IColorBoxesListProps> = ({ colors, results }) =>{
   return (
     <div className={styles.resultItem}>
       <div className={styles.colorsList}>
@@ -21,4 +21,4 @@ const ColorBoxesList : React.FC<IColorBoxesListProps> = ({ colors, results }) =>
   );
 };
 
-export default ColorBoxesList;
+export default ColorBoxesResultList;

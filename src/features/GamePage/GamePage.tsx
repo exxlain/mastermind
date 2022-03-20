@@ -23,7 +23,7 @@ import { START_PAGE } from '../../app/constants/paths';
 import findEmptyElementIndex from '../../app/helpers/findEmptyElementIndex';
 
 import ColorBoxesSelectedList from '../components/ColorBoxesSelectedList';
-import ColorBoxesList from './../components/ColorBoxesList';
+import ColorBoxesResultList from './../components/ColorBoxesResultList';
 import ColorBoxesButtonsList from './../components/ColorBoxesButtonsList';
 import styles from './GamePage.module.css';
 import Fireworks from './../components/Fireworks/Fireworks';
@@ -86,7 +86,7 @@ export function GamePage() {
         </button>
         <section className={styles.results}>
           <p className={styles.resultsText}>Your results:</p>
-          {currentSequences.map((sequence, index)=>(<ColorBoxesList colors={sequence} results={currentResults[index]} key={nanoid()}/>))}
+          {currentSequences.map((sequence, index)=>(<ColorBoxesResultList colors={sequence} results={currentResults[index]} key={nanoid()}/>))}
         </section>
       </div>
      </>

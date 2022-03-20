@@ -31,7 +31,7 @@ export function StartPage() {
           >start</button>
         </Link>
       </section>
-      <div>version 1.1.2</div>
+      <div>version 1.1.3</div>
     </div>
   );
 }

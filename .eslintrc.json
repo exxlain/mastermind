@@ -26,5 +26,18 @@
         "@typescript-eslint"
     ],
     "rules": {
-    }
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.stories.*",
+            "**/.storybook/**/*.*"
+          ],
+          "peerDependencies": true
+        }
+      ],
+      "@typescript-eslint/await-thenable": 0
+    },
+  "ignorePatterns": ["**/*.stories.*",
+    "**/.storybook/**/*.*"]
 }
