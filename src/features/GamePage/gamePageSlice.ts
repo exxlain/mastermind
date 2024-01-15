@@ -31,9 +31,9 @@ const gamePageSlice = createSlice({
       state.currentSequence[action.payload] = emptyElement;
     },
     saveResult(state, action: PayloadAction<Array<string>>){
-      state.sequences.push(state.currentSequence);
+      state.sequences.unshift(state.currentSequence);
       const result = checkResult(action.payload, state.currentSequence);
-      state.results.push(result);
+      state.results.unshift(result);
       state.currentSequence = puzzleItemsCleared;
     },
     resetResults: ()=>{

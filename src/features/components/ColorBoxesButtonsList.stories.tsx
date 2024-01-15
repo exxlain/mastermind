@@ -4,7 +4,7 @@ import {Provider} from "react-redux";
 import {store} from "../../app/store";
 import ColorBoxesButtonsList from './ColorBoxesButtonsList';
 import { pushColorToCurrentPuzzle } from '../GamePage/gamePageSlice';
-
+import { BoxColor } from '../../app/constants/constants';
 
 export default {
   title: 'ColorBoxesButtonsList',
@@ -28,18 +28,18 @@ const Template: ComponentStory<typeof ColorBoxesButtonsList> = (args) => <ColorB
 
 export const Primary = Template.bind({});
 Primary.args = {
-  colors: ['fireBrick', 'mediumBlue', 'forestGreen', 'gold', 'floralWhite'],
+  colors: [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GOLD, BoxColor.WHITE],
   selectColor: pushColorToCurrentPuzzle,
 };
 
 export const ALWrong = Template.bind({});
 ALWrong.args = {
-  colors: ['mediumBlue', 'mediumBlue', 'forestGreen', 'forestGreen', 'floralWhite'],
+  colors: [BoxColor.BLUE, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GREEN, BoxColor.WHITE],
   selectColor: pushColorToCurrentPuzzle,
 };
 
 export const AllRight = Template.bind({});
 AllRight.args = {
-  colors: ['fireBrick', 'forestGreen', 'forestGreen', 'gold', 'forestGreen'],
+  colors: [BoxColor.BROWN, BoxColor.GREEN, BoxColor.GREEN, BoxColor.GOLD, BoxColor.GREEN],
   selectColor: pushColorToCurrentPuzzle,
 };

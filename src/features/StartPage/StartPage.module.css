@@ -34,19 +34,22 @@
   font-family: CastlemarRegular, serif;
   appearance: none;
   font-size: 55px;
-  padding: 0 22px 4px 22px;
-  outline: none;
-  border: 1px solid #4B4137;
-  border-radius: 50%;
-  color: #4B4137;
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--bright-gold);
   cursor: pointer;
-  background: #A67C00 none;
+  background: radial-gradient(circle, #8b0000, #8b0000);
   transition: all 0.15s;
+  border-top: 4px ridge var(--bright-gold);
+  border-left: 4px groove var(--bright-gold);
+  border-right: 4px ridge var(--bright-gold);
+  border-bottom: 4px groove var(--bright-gold);
+  box-shadow: var(--shadow);
 }
 .button:hover,
 .button:focus {
-  border: 2px solid #A67C00;
+  border: 2px solid var(--bright-gold);
 }
 .button:active {
-  background-color: #A67C00;
+  background-color: var(--bright-gold);
 }

@@ -1,9 +1,17 @@
+:root {
+  --bright-gold: #DBA338;
+  --muted-gold: #C3883E;
+  --dark-red: #471107;
+  --background: #654837;
+  --shadow: inset 0px 0px 5px 3px rgba(1,1,1,0.3);
+}
+
 body {
   margin: 0;
   font-family: 'CastlemarRegular', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #805D41;
+  background-color: var(--background);
 }
 
 code {
@@ -17,3 +25,5 @@ code {
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
+
+

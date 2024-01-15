@@ -27,6 +27,7 @@ import ColorBoxesResultList from './../components/ColorBoxesResultList';
 import ColorBoxesButtonsList from './../components/ColorBoxesButtonsList';
 import styles from './GamePage.module.css';
 import Fireworks from './../components/Fireworks/Fireworks';
+import Info from './../components/Info';
 
 export function GamePage() {
   const dispatch: AppDispatch = useAppDispatch();
@@ -76,6 +77,7 @@ export function GamePage() {
           {<ColorBoxesButtonsList colors={puzzleItemsVariants} selectColor={pushColorToCurrentPuzzle}/>}
           {<ColorBoxesSelectedList colors={currentSequenceSelection} clearSelectedPlace={clearSelectedPlace}/>}
         </section>
+        <section className={styles.checkInfoWrapper}>
         <button
           className={styles.checkButton}
           aria-label="Check your sequence"
@@ -84,6 +86,8 @@ export function GamePage() {
         >
           Check
         </button>
+        <Info/>
+        </section>
         <section className={styles.results}>
           <p className={styles.resultsText}>Your results:</p>
           {currentSequences.map((sequence, index)=>(<ColorBoxesResultList colors={sequence} results={currentResults[index]} key={nanoid()}/>))}

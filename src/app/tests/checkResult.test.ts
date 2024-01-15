@@ -1,128 +1,129 @@
 import checkResult from '../helpers/checkResult';
+import { BoxColor } from '../constants/constants';
 
 describe('checkResult', ()=>{
   test('only fails', ()=>{
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'gold', 'mediumBlue'];
-    const currentSequence = [ 'floralWhite', 'floralWhite', 'floralWhite', 'floralWhite', 'floralWhite'];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GOLD, BoxColor.BLUE];
+    const currentSequence = [ BoxColor.WHITE, BoxColor.WHITE, BoxColor.WHITE, BoxColor.WHITE, BoxColor.WHITE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([0, 0, 0, 0, 0]);
   });
 
   test('1 full match in first place', ()=>{
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'gold', 'mediumBlue'];
-    const currentSequence = [ 'fireBrick', 'floralWhite', 'floralWhite', 'floralWhite', 'floralWhite'];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GOLD, BoxColor.BLUE];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.WHITE, BoxColor.WHITE, BoxColor.WHITE, BoxColor.WHITE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 0, 0, 0, 0]);
   });
 
   test('1 full match in second place', ()=>{
-    const puzzleSequence = ['mediumBlue', 'fireBrick', 'forestGreen', 'gold', 'mediumBlue'];
-    const currentSequence = [ 'floralWhite', 'fireBrick', 'floralWhite', 'floralWhite', 'floralWhite'];
+    const puzzleSequence = [BoxColor.BLUE, BoxColor.BROWN, BoxColor.GREEN, BoxColor.GOLD, BoxColor.BLUE];
+    const currentSequence = [ BoxColor.WHITE, BoxColor.BROWN, BoxColor.WHITE, BoxColor.WHITE, BoxColor.WHITE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 0, 0, 0, 0]);
   });
 
   test('2 full', ()=>{
-    const currentSequence = [ 'fireBrick', 'floralWhite', 'mediumBlue', 'floralWhite', 'floralWhite'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'mediumBlue', 'gold', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.WHITE, BoxColor.BLUE, BoxColor.WHITE, BoxColor.WHITE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.BLUE, BoxColor.GOLD, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 2, 0, 0, 0]);
   });
 
   test('3 full', ()=>{
-    const currentSequence = [ 'fireBrick', 'floralWhite', 'mediumBlue', 'floralWhite', 'mediumBlue'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'mediumBlue', 'gold', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.WHITE, BoxColor.BLUE, BoxColor.WHITE, BoxColor.BLUE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.BLUE, BoxColor.GOLD, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 2, 2, 0, 0]);
   });
 
   test('4 full', ()=>{
-    const currentSequence = [ 'fireBrick', 'mediumBlue', 'mediumBlue', 'floralWhite', 'mediumBlue'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'mediumBlue', 'gold', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.BLUE, BoxColor.BLUE, BoxColor.WHITE, BoxColor.BLUE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.BLUE, BoxColor.GOLD, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 2, 2, 2, 0]);
   });
 
   test('5 full', ()=>{
-    const currentSequence = [ 'fireBrick', 'mediumBlue', 'mediumBlue', 'gold', 'mediumBlue'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'mediumBlue', 'gold', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.BLUE, BoxColor.BLUE, BoxColor.GOLD, BoxColor.BLUE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.BLUE, BoxColor.GOLD, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 2, 2, 2, 2]);
   });
 
   test('1 full + 1 color match', ()=>{
-    const currentSequence = [ 'fireBrick', 'floralWhite', 'mediumBlue', 'floralWhite', 'floralWhite'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'gold', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.WHITE, BoxColor.BLUE, BoxColor.WHITE, BoxColor.WHITE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GOLD, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 1, 0, 0, 0]);
   });
 
   test('1 full + 2 color match', ()=>{
-    const currentSequence = [ 'fireBrick', 'forestGreen', 'mediumBlue', 'floralWhite', 'floralWhite'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'gold', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.GREEN, BoxColor.BLUE, BoxColor.WHITE, BoxColor.WHITE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GOLD, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 1, 1, 0, 0]);
   });
 
   test('1 full + 3 color match', ()=>{
-    const currentSequence = [ 'fireBrick', 'forestGreen', 'mediumBlue', 'floralWhite', 'gold'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'gold', 'forestGreen'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.GREEN, BoxColor.BLUE, BoxColor.WHITE, BoxColor.GOLD];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GOLD, BoxColor.GREEN];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 1, 1, 1, 0]);
   });
 
   test('1 full + 4 color match', ()=>{
-    const currentSequence = [ 'fireBrick', 'forestGreen', 'mediumBlue', 'floralWhite', 'gold'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'gold', 'floralWhite'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.GREEN, BoxColor.BLUE, BoxColor.WHITE, BoxColor.GOLD];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GOLD, BoxColor.WHITE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 1, 1, 1, 1]);
   });
 
   test('2 full  + 1 color match', ()=>{
-    const currentSequence = [ 'fireBrick', 'gold', 'mediumBlue', 'floralWhite', 'floralWhite'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'mediumBlue', 'gold', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.GOLD, BoxColor.BLUE, BoxColor.WHITE, BoxColor.WHITE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.BLUE, BoxColor.GOLD, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 2, 1, 0, 0]);
   });
   test('2 full  + 2 color match', ()=>{
-    const currentSequence = [ 'fireBrick', 'gold', 'mediumBlue', 'floralWhite', 'floralWhite'];
-    const puzzleSequence = ['fireBrick', 'floralWhite', 'mediumBlue', 'gold', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.GOLD, BoxColor.BLUE, BoxColor.WHITE, BoxColor.WHITE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.WHITE, BoxColor.BLUE, BoxColor.GOLD, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 2, 1, 1, 0]);
   });
 
   test('2 full  + 3 color match', ()=>{
-    const currentSequence = [ 'fireBrick', 'gold', 'mediumBlue', 'floralWhite', 'mediumBlue'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'mediumBlue', 'gold', 'floralWhite'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.GOLD, BoxColor.BLUE, BoxColor.WHITE, BoxColor.BLUE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.BLUE, BoxColor.GOLD, BoxColor.WHITE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 2, 1, 1, 1]);
   });
 
   test('3 full  + 1 color match', ()=>{
-    const currentSequence = [ 'fireBrick', 'gold', 'mediumBlue', 'floralWhite', 'mediumBlue'];
-    const puzzleSequence = ['fireBrick', 'gold', 'mediumBlue', 'gold', 'floralWhite'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.GOLD, BoxColor.BLUE, BoxColor.WHITE, BoxColor.BLUE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.GOLD, BoxColor.BLUE, BoxColor.GOLD, BoxColor.WHITE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 2, 2, 1, 0]);
   });
 
   test('3 full  + 2 color match', ()=>{
-    const currentSequence = [ 'fireBrick', 'gold', 'mediumBlue', 'floralWhite', 'mediumBlue'];
-    const puzzleSequence = ['fireBrick', 'gold', 'mediumBlue', 'mediumBlue', 'floralWhite'];
+    const currentSequence = [ BoxColor.BROWN, BoxColor.GOLD, BoxColor.BLUE, BoxColor.WHITE, BoxColor.BLUE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.GOLD, BoxColor.BLUE, BoxColor.BLUE, BoxColor.WHITE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([2, 2, 2, 1, 1]);
   });
 
   test('1 color match', ()=>{
-    const currentSequence = [ 'floralWhite', 'floralWhite', 'mediumBlue', 'floralWhite', 'floralWhite'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'gold', 'mediumBlue'];
+    const currentSequence = [ BoxColor.WHITE, BoxColor.WHITE, BoxColor.BLUE, BoxColor.WHITE, BoxColor.WHITE];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GOLD, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([1, 0, 0, 0, 0]);
   });
 
   test('2 color match', ()=>{
-    const currentSequence = [ 'floralWhite', 'floralWhite', 'mediumBlue', 'floralWhite', 'forestGreen'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'forestGreen', 'mediumBlue'];
+    const currentSequence = [ BoxColor.WHITE, BoxColor.WHITE, BoxColor.BLUE, BoxColor.WHITE, BoxColor.GREEN];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GREEN, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([1, 1, 0, 0, 0]);
   });
 
   test('3 color match', ()=>{
-    const currentSequence = [ 'mediumBlue', 'floralWhite', 'mediumBlue', 'floralWhite', 'forestGreen'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'forestGreen', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BLUE, BoxColor.WHITE, BoxColor.BLUE, BoxColor.WHITE, BoxColor.GREEN];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GREEN, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([1, 1, 1, 0, 0]);
   });
 
   test('4 color match', ()=>{
-    const currentSequence = [ 'mediumBlue', 'fireBrick', 'mediumBlue', 'floralWhite', 'forestGreen'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'forestGreen', 'mediumBlue'];
+    const currentSequence = [ BoxColor.BLUE, BoxColor.BROWN, BoxColor.BLUE, BoxColor.WHITE, BoxColor.GREEN];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.GREEN, BoxColor.BLUE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([1, 1, 1, 1, 0]);
   });
 
   test('5 color match', ()=>{
-    const currentSequence = [ 'mediumBlue', 'fireBrick', 'mediumBlue', 'floralWhite', 'forestGreen'];
-    const puzzleSequence = ['fireBrick', 'mediumBlue', 'forestGreen', 'mediumBlue', 'floralWhite'];
+    const currentSequence = [ BoxColor.BLUE, BoxColor.BROWN, BoxColor.BLUE, BoxColor.WHITE, BoxColor.GREEN];
+    const puzzleSequence = [BoxColor.BROWN, BoxColor.BLUE, BoxColor.GREEN, BoxColor.BLUE, BoxColor.WHITE];
     expect(checkResult(puzzleSequence, currentSequence)).toEqual([1, 1, 1, 1, 1]);
   });
 

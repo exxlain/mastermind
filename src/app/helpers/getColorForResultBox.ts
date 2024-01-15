@@ -1,11 +1,15 @@
+import { ResultColor } from '../constants/constants';
+
 const getColorForResultBox = (result: number)=>{
   switch (result){
     case 2:
-      return 'black';
+      return ResultColor.BLACK;
     case 1:
-      return 'white';
+      return ResultColor.WHITE;
+    case 0:
+      return ResultColor.GREY;
     default:
-      return 'grey';
+      return ResultColor.GREY;
   }
 };
 
